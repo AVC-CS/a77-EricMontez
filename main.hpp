@@ -16,12 +16,6 @@ void findMaxVal(int[], int[][NUM_COLS], int, int);
 void findMaxSum(int result[], int num[][NUM_COLS], int rows, int cols)
 {
     // TODO: find the row whose sum is the largest, copy that row into result.
-    int maxSum = 0, maxRow = 0;
-    for (int i = 0; i < rows; i++)
-    {
-        int sum = 0;
-        for (int j = 0; j < cols; j++) sum += num[i][j];
-        if (i == 0 || sum > maxSum) { maxSum = sum; maxRow = i; }
     }
     for (int j = 0; j < cols; j++) result[j] = num[maxRow][j];
 }
@@ -29,24 +23,12 @@ void findMaxSum(int result[], int num[][NUM_COLS], int rows, int cols)
 void findMaxElm(int result[], int num[][NUM_COLS], int rows, int cols)
 {
     // TODO: for each row, store the maximum element of that row in result[i].
-    for (int i = 0; i < rows; i++)
-    {
-        int m = num[i][0];
-        for (int j = 1; j < cols; j++)
-            if (num[i][j] > m) m = num[i][j];
-        result[i] = m;
     }
 }
 
 void findMaxVal(int result[], int num[][NUM_COLS], int rows, int cols)
 {
     // TODO: find the cell (r,c) holding the global maximum value; copy row r.
-    int maxVal = num[0][0], maxRow = 0;
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < cols; j++)
-        {
-            if (num[i][j] > maxVal) { maxVal = num[i][j]; maxRow = i; }
         }
     }
     for (int j = 0; j < cols; j++) result[j] = num[maxRow][j];
