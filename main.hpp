@@ -16,15 +16,15 @@ void findMaxVal(int[], int[][NUM_COLS], int, int);
 
 void findMaxSum(int result[], int num[][NUM_COLS], int rows, int cols)
 {
-    // TODO: find the row whose sum is the largest, copy that row into result.
-    int maxsum;
-    int maxrow;
+    // find the row whose sum is the largest, copy that row into result.
+    int maxsum = INT_MIN;
+    int maxrow = -1;
     for (int i = 0; i < rows; i++) {
         int total = 0;
         for (int j = 0; j < cols; j++) {
             total += num[i][j];
         }
-        if ((i == 0) || total > maxsum) {
+        if (total > maxsum) {
             maxsum = total;
             maxrow = i;
         }
@@ -32,16 +32,15 @@ void findMaxSum(int result[], int num[][NUM_COLS], int rows, int cols)
     for (int i = 0; i < cols; i++) {
         result[i] = num[maxrow][i];
     }
-    // cout << "The sum of row " << maxrow << " is: " << maxsum << endl;
 }
 
 void findMaxElm(int result[], int num[][NUM_COLS], int rows, int cols)
 {
-    // TODO: for each row, store the maximum element of that row in result[i].
+    // for each row, store the maximum element of that row in result[i].
     for (int i = 0; i < rows; i++) {
-        int maxElm;
+        int maxElm = INT_MIN;
         for (int j = 0; j < cols; j++) {
-            if ((j == 0) || num[i][j] > maxElm) {
+            if (num[i][j] > maxElm) {
                 maxElm = num[i][j];
             }
         }
@@ -51,9 +50,9 @@ void findMaxElm(int result[], int num[][NUM_COLS], int rows, int cols)
 
 void findMaxVal(int result[], int num[][NUM_COLS], int rows, int cols)
 {
-    // TODO: find the row that contains the global maximum value, copy that row into result.
-    int globalMax = num[0][0];
-    int maxRow;
+    // find the row that contains the global maximum value, copy that row into result.
+    int globalMax = INT_MIN;
+    int maxRow = -1;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (num[i][j] > globalMax) {
